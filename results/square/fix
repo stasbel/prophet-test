@@ -1,0 +1,881 @@
+Rank 1
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+printf((__abst_hole()), res);
+
+Score 2.11030
+======================
+Rank 2
+Priority -3.91202
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if ((arg != 487) || (__abst_hole(arg))) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score 0.20029
+========Score Detail======
+NULL -3.06717
+arg 0.20029
+======================
+Rank 3
+Priority -3.91202
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if ((arg != 487) && !(__abst_hole(arg))) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score 0.20029
+========Score Detail======
+NULL -3.06717
+arg 0.20029
+======================
+Rank 4
+Priority -3.91202
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if ((argc != 2) || (__abst_hole(argc, argv))) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -1.07522
+========Score Detail======
+NULL -3.47189
+argc -1.07522
+argv -2.85951
+======================
+Rank 5
+Priority -3.91202
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if ((argc != 2) && !(__abst_hole(argc, argv))) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -1.07522
+========Score Detail======
+NULL -3.47189
+argc -1.07522
+argv -2.85951
+======================
+Rank 6
+Priority -3.97263
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if (!(__abst_hole(arg)))
+    if (arg != 487) {
+        return arg * arg;
+    } else {
+        return arg + 1;
+    }
+
+Score -1.69501
+========Score Detail======
+NULL -4.96247
+arg -1.69501
+======================
+Rank 7
+Priority -4.03324
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if (!(__abst_hole(argc, argv)) && (argc != 2)) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -2.49942
+========Score Detail======
+NULL -4.89608
+argc -2.49942
+argv -4.28371
+======================
+Rank 8
+Priority -4.03324
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if (!(__abst_hole(argc, argv)))
+    if (argc != 2) {
+        printf("Please, provide a positive float number.");
+        return 1;
+    }
+
+Score -2.60153
+========Score Detail======
+NULL -4.99819
+argc -2.60153
+argv -4.38582
+======================
+Rank 9
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+if (!(__abst_hole(res, arg, argv, argc)))
+    printf("%d\n", res);
+
+Score -2.71199
+========Score Detail======
+NULL -3.81288
+argc -3.62299
+argv -4.48140
+arg -3.80698
+res -2.71199
+======================
+Rank 10
+Priority -3.91202
+At location square-bug.c:10
+--Src File: square-bug.c
+Fragment 0:
+if (!(__abst_hole(arg)))
+    return arg + 1;
+
+Score -3.03407
+========Score Detail======
+NULL -4.01779
+arg -3.03407
+======================
+Rank 11
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+if (!(__abst_hole(res, arg, argv, argc)))
+    return 0;
+
+Score -3.39111
+========Score Detail======
+NULL -3.81835
+argc -3.63144
+argv -4.48687
+arg -3.81245
+res -3.39111
+======================
+Rank 12
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+printf("%d\n", res);
+
+Score -4.06821
+======================
+Rank 13
+Priority -3.91202
+At location square-bug.c:10
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg)))
+    return 0;
+return arg + 1;
+
+Score -4.24084
+========Score Detail======
+NULL -4.74575
+arg -4.24084
+======================
+Rank 14
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(res, arg, argv, argc)))
+    return 0;
+return 0;
+
+Score -4.81081
+========Score Detail======
+NULL -5.09284
+argc -4.81400
+argv -5.54122
+arg -5.25271
+res -4.81081
+======================
+Rank 15
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+rindex("%d\n", res);
+
+Score -4.87785
+======================
+Rank 16
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+rindex("%d\n", res);
+
+Score -4.87785
+======================
+Rank 17
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+__bzero("%d\n", res);
+
+Score -4.87785
+======================
+Rank 18
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+index("%d\n", res);
+
+Score -4.87785
+======================
+Rank 19
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+index("%d\n", res);
+
+Score -4.87785
+======================
+Rank 20
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+strrchr("%d\n", res);
+
+Score -4.87785
+======================
+Rank 21
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+strrchr("%d\n", res);
+
+Score -4.87785
+======================
+Rank 22
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+strchr("%d\n", res);
+
+Score -4.87785
+======================
+Rank 23
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+strchr("%d\n", res);
+
+Score -4.87785
+======================
+Rank 24
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+mkstemps("%d\n", res);
+
+Score -4.87785
+======================
+Rank 25
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+wctomb("%d\n", res);
+
+Score -4.87785
+======================
+Rank 26
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+getloadavg("%d\n", res);
+
+Score -4.87785
+======================
+Rank 27
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+scanf("%d\n", res);
+
+Score -4.87785
+======================
+Rank 28
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+scanf("%d\n", res);
+
+Score -4.87785
+======================
+Rank 29
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+scanf("%d\n", res);
+
+Score -4.87785
+======================
+Rank 30
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+__overflow("%d\n", res);
+
+Score -4.87785
+======================
+Rank 31
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+strnlen("%d\n", res);
+
+Score -4.88074
+======================
+Rank 32
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+mblen("%d\n", res);
+
+Score -4.88074
+======================
+Rank 33
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(res, arg, argv, argc)))
+    return 0;
+printf("%d\n", res);
+
+Score -4.92864
+========Score Detail======
+NULL -6.44590
+argc -6.16682
+argv -6.89428
+arg -6.60577
+res -4.92864
+======================
+Rank 34
+Priority -3.99283
+At location square-bug.c:21
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg, argv, argc)))
+    return 0;
+int res = calc(arg);
+
+Score -5.41094
+========Score Detail======
+NULL -6.48630
+argc -6.20722
+argv -6.93469
+arg -5.41094
+======================
+Rank 35
+Priority -4.01304
+At location square-bug.c:20
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(argv, argc)))
+    return 0;
+int arg = atoi(argv[1]);
+
+Score -5.59203
+========Score Detail======
+NULL -6.17962
+argc -5.90055
+argv -5.59203
+======================
+Rank 36
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+printf("%d\n", res);
+printf("%d\n", res);
+
+Score -5.68415
+======================
+Rank 37
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+printf("%d\n", res);
+return 0;
+
+Score -5.79220
+======================
+Rank 38
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+return 0;
+
+Score -5.82297
+======================
+Rank 39
+Priority -3.97263
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg)))
+    return 0;
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score -5.86764
+========Score Detail======
+NULL -6.11607
+arg -5.86764
+======================
+Rank 40
+Priority -3.91202
+At location square-bug.c:10
+--Src File: square-bug.c
+Fragment 0:
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+return arg + 1;
+
+Score -6.02687
+======================
+Rank 41
+Priority -3.91202
+At location square-bug.c:10
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+return arg + 1;
+
+Score -6.59601
+======================
+Rank 42
+Priority -4.03324
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(argc, argv)))
+    return 0;
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -6.65306
+========Score Detail======
+NULL -6.67707
+argc -6.65306
+argv -7.46799
+======================
+Rank 43
+Priority -3.91202
+At location square-bug.c:10
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg)))
+    return 487;
+return arg + 1;
+
+Score -6.72476
+========Score Detail======
+NULL -7.22968
+arg -6.72476
+======================
+Rank 44
+Priority -3.91202
+At location square-bug.c:10
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg)))
+    return 1;
+return arg + 1;
+
+Score -6.72476
+========Score Detail======
+NULL -7.22968
+arg -6.72476
+======================
+Rank 45
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(res, arg, argv, argc)))
+    return 2;
+return 0;
+
+Score -7.29474
+========Score Detail======
+NULL -7.57676
+argc -7.29792
+argv -8.02515
+arg -7.73663
+res -7.29474
+======================
+Rank 46
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(res, arg, argv, argc)))
+    return 1;
+return 0;
+
+Score -7.29474
+========Score Detail======
+NULL -7.57676
+argc -7.29792
+argv -8.02515
+arg -7.73663
+res -7.29474
+======================
+Rank 47
+Priority -3.71202
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -7.33656
+======================
+Rank 48
+Priority -3.71202
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score -7.41102
+======================
+Rank 49
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(res, arg, argv, argc)))
+    return 1;
+printf("%d\n", res);
+
+Score -7.41256
+========Score Detail======
+NULL -8.92982
+argc -8.65074
+argv -9.37821
+arg -9.08969
+res -7.41256
+======================
+Rank 50
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(res, arg, argv, argc)))
+    return 2;
+printf("%d\n", res);
+
+Score -7.41256
+========Score Detail======
+NULL -8.92982
+argc -8.65074
+argv -9.37821
+arg -9.08969
+res -7.41256
+======================
+Rank 51
+Priority -3.99283
+At location square-bug.c:21
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg, argv, argc)))
+    return 2;
+int res = calc(arg);
+
+Score -7.89486
+========Score Detail======
+NULL -8.97023
+argc -8.69115
+argv -9.41861
+arg -7.89486
+======================
+Rank 52
+Priority -3.99283
+At location square-bug.c:21
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg, argv, argc)))
+    return 1;
+int res = calc(arg);
+
+Score -7.89486
+========Score Detail======
+NULL -8.97023
+argc -8.69115
+argv -9.41861
+arg -7.89486
+======================
+Rank 53
+Priority -4.01304
+At location square-bug.c:20
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(argv, argc)))
+    return 1;
+int arg = atoi(argv[1]);
+
+Score -8.07596
+========Score Detail======
+NULL -8.66355
+argc -8.38447
+argv -8.07596
+======================
+Rank 54
+Priority -4.01304
+At location square-bug.c:20
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(argv, argc)))
+    return 2;
+int arg = atoi(argv[1]);
+
+Score -8.07596
+========Score Detail======
+NULL -8.66355
+argc -8.38447
+argv -8.07596
+======================
+Rank 55
+Priority -3.71202
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score -8.29808
+======================
+Rank 56
+Priority -3.97263
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg)))
+    return 487;
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score -8.35157
+========Score Detail======
+NULL -8.59999
+arg -8.35157
+======================
+Rank 57
+Priority -3.97263
+At location square-bug.c:7
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(arg)))
+    return 1;
+if (arg != 487) {
+    return arg * arg;
+} else {
+    return arg + 1;
+}
+
+Score -8.35157
+========Score Detail======
+NULL -8.59999
+arg -8.35157
+======================
+Rank 58
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+printf("%d\n", res);
+
+Score -8.49887
+======================
+Rank 59
+Priority -3.93223
+At location square-bug.c:24
+--Src File: square-bug.c
+Fragment 0:
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+return 0;
+
+Score -8.58623
+======================
+Rank 60
+Priority -3.99283
+At location square-bug.c:21
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+int res = calc(arg);
+
+Score -9.00259
+======================
+Rank 61
+Priority -4.03324
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(argc, argv)))
+    return 1;
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -9.13699
+========Score Detail======
+NULL -9.16099
+argc -9.13699
+argv -9.95191
+======================
+Rank 62
+Priority -4.03324
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if ((__abst_hole(argc, argv)))
+    return 2;
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -9.13699
+========Score Detail======
+NULL -9.16099
+argc -9.13699
+argv -9.95191
+======================
+Rank 63
+Priority -4.01304
+At location square-bug.c:20
+--Src File: square-bug.c
+Fragment 0:
+printf("Please, provide a positive float number.");
+int arg = atoi(argv[1]);
+
+Score -9.27314
+======================
+Rank 64
+Priority -3.71202
+At location square-bug.c:15
+--Src File: square-bug.c
+Fragment 0:
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+
+Score -10.15271
+======================
+Rank 65
+Priority -3.95243
+At location square-bug.c:23
+--Src File: square-bug.c
+Fragment 0:
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+printf("%d\n", res);
+
+Score -12.38395
+======================
+Rank 66
+Priority -3.99283
+At location square-bug.c:21
+--Src File: square-bug.c
+Fragment 0:
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+int res = calc(arg);
+
+Score -12.88767
+======================
+Rank 67
+Priority -4.01304
+At location square-bug.c:20
+--Src File: square-bug.c
+Fragment 0:
+if (argc != 2) {
+    printf("Please, provide a positive float number.");
+    return 1;
+}
+int arg = atoi(argv[1]);
+
+Score -13.15822
+======================

@@ -1,0 +1,9 @@
+Initialize the program!
+Generating repair candidates!
+Processing square-bug.c
+Total 67 different repair schemas!!!!
+Total 138 different repair candidate templates for scoring!!!
+Total 102 different partial repair candidate templates!!
+Print candidate templates...
+Total number of compiles: 0
+Total number of test eval: 0

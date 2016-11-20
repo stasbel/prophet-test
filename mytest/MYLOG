@@ -1,0 +1,3 @@
+./square-build.py /home/ubuntu/Workspace/prophet/build/tests/prophet/mytest
+./square-build.py /home/ubuntu/Workspace/prophet/build/tests/prophet/mytest
+./square-test.py /home/ubuntu/Workspace/prophet/build/tests/prophet/mytest /home/ubuntu/Workspace/prophet/build/tests/prophet/mytest/tests /home/ubuntu/Workspace/prophet/build/tests/prophet/mytest 100 101 102 103 104 105 106

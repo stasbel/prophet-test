@@ -1,0 +1,9 @@
+# tests
+test[0-9]*
+# emacs
+.~/
+*~
+# mac os
+.DS_Store
+# python
+*.pyc
