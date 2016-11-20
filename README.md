@@ -96,7 +96,7 @@
 Важно чтобы поддерживались следующие флаги и аргументы:
     
     ```
-    *-build.py [-p src] src test work id+ : id*
+    *-test.py [-p src] src test work id+ : id*
     ```
     flag/arg | def
     ------------ | -------------
