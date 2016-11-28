@@ -41,6 +41,12 @@
     clang_cmd = "/usr/bin/clang-3.6"
     ```
 
+Также перемещаем shebang на первую строчку:
+
+    ```python
+    #!/usr/bin/env python
+    ```
+
 5. Идем в */prophet-gpl/include* и собираем c помощью *make*.
 Результатом должен быть файл *_prophet_profile.h*.
 6. Проверьте и исправьте, если нужно строчки с 4 по 15 в *config.h* (префикс wrap_path будет свой):
