@@ -1,5 +1,5 @@
 FILE=square-bug
-SRC_DIR=/home/ubuntu/prophet-gpl/prophet-test/mytest
+SRC_DIR=/home/prophet/prophet-gpl/prophet-test/mytest
 TEST_DIR=$(SRC_DIR)/tests
 
 all: clean compile

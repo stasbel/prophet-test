@@ -7,3 +7,6 @@ test[0-9]*
 .DS_Store
 # python
 *.pyc
+# exec
+mytest/square-bug
+mytest/square-bug.o
