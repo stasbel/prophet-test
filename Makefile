@@ -6,7 +6,7 @@ LOGFILE=log
 SUMFILE=summary
 FIXFILE=fix
 FULLSEARCHFLAGS=-consider-all -full-explore -full-synthesis -cond-ext
-FLAGS=$(FULLSEARCHFLAGS) -ll=10 -vl=10 -no-clean-up -stats -summary-file=$(SUMFILE) -print-fix-only=$(FIXFILE)
+FLAGS=$(FULLSEARCHFLAGS) -ll=10 -vl=10 -no-clean-up -stats -summary-file=$(SUMFILE)
 WORKDIR=tmp
 
 all: run
@@ -16,6 +16,10 @@ help:
 
 init:
 	$(PROPHET) $(CONF) -r $(WORKDIR) -init-only
+
+fix:
+	touch Makefile
+	$(PROPHET) $(FEATURE) -r $(WORKDIR) -skip-verify $(FLAGS) -print-fix-only=$(FIXFILE)
 
 run:
 	touch Makefile

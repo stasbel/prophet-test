@@ -6,10 +6,11 @@
 - [Commands](#commands)
 - [Flags](#flags)
 - [Examples](#examples)
+- [Reproduce](#reproduce)
 
 ## TODO
 
-- [ ] Разобраться с ошибкой запуска clang'ом c-шного кода.
+- [x] Разобраться с ошибкой запуска clang'ом c-шного кода.
 Вероятней всего, ошибка связана с трюком с symlink'ами:
 
     ```
@@ -17,6 +18,8 @@
     /usr/include/stdio.h:33:11: fatal error: 'stddef.h' file not found
     # include <stddef.h>
     ``` 
+
+- [ ] Добавить autocomplete для *build* скрипта.
 
 ## Prereq
 
@@ -53,7 +56,7 @@
 
     ```c
     /* the clang cmd full path */
-    #define CLANG_CMD "/usr/bin/clang-3.6"
+    #define CLANG_CMD "/usr/bin/clang"
     
     /* the location of the wrapper for instrument the file */
     #define CLANG_WRAP_PATH "/home/ubuntu/prophet-gpl/wrap"
@@ -175,3 +178,27 @@ Total 138 different repair candidate templates for scoring!!!
 Total 102 different partial repair candidate templates!!
 ```
 [Остальные патчи и прочая инфа.](https://github.com/StasBel/prophet-test/tree/master/results/square/)
+
+## Reproduce
+
+Текущие вычисления можно воспроизвести следующим образом:
+
+1. Клонируем этот репозиторий, переходим на нужную ветку (сейчас это только *master*, но это может быть не так).
+2. Исправляем абсолютные пути в Makefile'ах на корректные для вашего окружения.
+3. Идем в *mytest/*, там собираем тесты, *.conf* и *.revlog* файлы следующим образом:
+
+   ```makefile
+    make
+	make prereq
+    ```
+
+4. Тут же опять исправляем абсолютные пусти в *.conf* и *Makefile* на корректные для вашего окружения.
+5. Идем обратно в корневую папку, далее можно запускать вычисления, есть следующие зависимости в *Makefile'e*:
+
+   flag/arg | def
+   ------------ | -------------
+   help | вывод "prophet --help"
+   init | этап локализации ошибки, нужно обязательно запустить до основных этапов
+   fix | этап генерации патчей
+   run | этап генерации патчей с сортировкой
+   clean | clean
