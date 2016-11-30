@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#!/usr/bin/env python
+#!/usr/bin/env python
 from sys import argv
 from os import path, chdir, getcwd, environ
 from tester_common import extract_arguments

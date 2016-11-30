@@ -1,6 +1,6 @@
-PROPHET=/home/prophet/prophet-gpl/src/prophet
-FEATURE=-feature-para /home/prophet/prophet-gpl/crawler/para-all.out
-CONF=/home/prophet/prophet-gpl/prophet-test/mytest/square.conf
+PROPHET=/home/ubuntu/Workspace/prophet/src/prophet
+FEATURE=-feature-para /home/ubuntu/Workspace/prophet/crawler/para-all.out
+CONF=/home/ubuntu/Workspace/prophet/prophet-test/mytest/square.conf
 LOCFILE=location
 LOGFILE=log
 SUMFILE=summary

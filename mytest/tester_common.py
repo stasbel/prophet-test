@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#!/usr/bin/env python
 # Copyright (C) 2016 Fan Long, Martin Rianrd and MIT CSAIL 
 # Prophet
 # 
