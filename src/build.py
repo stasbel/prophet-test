@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-#!/usr/bin/env python
-#!/usr/bin/python
 from sys import argv
 from getopt import getopt
 from subprocess import call
@@ -8,8 +6,6 @@ from os import getcwd, system, chdir, environ
 from tester_common import extract_arguments
 
 if __name__ == "__main__":
-    # print argv
-
     opts, args = getopt(argv[1:], "cd:")
 
     compile_only = False
@@ -36,8 +32,6 @@ if __name__ == "__main__":
         exit(1)
 
     chdir(this_dir)
-
-    #system("cd " + str(src_dir) + " && make && cd " + str(this_dir))
 
     (builddir, buildargs) = extract_arguments(src_dir, dryrun_src)
 

@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+from sys import argv
+from subprocess import call, Popen, PIPE
+
+if __name__ == "__main__":
+    executable = "src/square-bug"
+
+    if (len(argv) < 2):
+        print "Not enough args"
+        exit(1)
+
+    id = int(argv[1])
+
+    with open("tests/test" + str(id), "r") as f:
+        array = []
+        for line in f:
+            array.append(line.rstrip().split()[0])
+        _input = array[0]
+        _output = array[1]
+        p = Popen([executable, _input], stdout=PIPE, stderr=PIPE)
+        ret, err = p.communicate()
+        if (int(ret) == int(_output)):
+            print "positive"
+        else:
+            print "negative"

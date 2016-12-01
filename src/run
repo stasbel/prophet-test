@@ -1,0 +1,142 @@
+#!/usr/bin/env python
+from sys import argv
+from getopt import getopt
+from os import getcwd, system, chdir, environ, path
+from glob import glob
+import inspect
+from subprocess import call, Popen, PIPE
+import re
+
+def print_help():
+    print "USAGE: ./run (-b, -bugged-file file | -h, --help | -f, --full-search) [src_dir] [flags]*"
+
+def make_tests():
+    chdir(test_dir)
+    if glob("Makefile"):
+        system("make")
+    ids = []
+    for test in glob("test[0-9]*"):
+        ids.append(int(test[4:]))
+    chdir(src_dir)
+    return ids
+
+def make_revlog(ids):
+    diff = []
+    positive = []
+    for id in ids:
+        p = Popen(["./run_test", str(id)], stdout=PIPE, stderr=PIPE)
+        ret, err = p.communicate()
+        if (re.match(".*positive.*", ret)):
+            positive.append(id)
+        else:
+            diff.append(id)
+    
+    chdir(work_dir)
+    f = open("repair.revlog", "w");
+    f.write("-\n-\n")
+    f.write("Diff Cases: Tot " + str(len(diff)) + "\n")
+    for id in diff:
+        f.write(str(id) + " ")
+    f.write("\n")
+    f.write("Positive Cases: Tot " + str(len(positive)) + "\n")
+    for id in positive:
+        f.write(str(id) + " ")
+    f.write("\n")
+    f.write("Regression Cases: Tot 0\n")
+    chdir(src_dir)
+
+def make_conf():
+    chdir(work_dir)
+    f = open("repair.conf", "w");
+    f.write("revision_file=" + revlog_file + "\n");
+    f.write("src_dir=" + src_dir + "\n")
+    f.write("test_dir=" + path.join(src_dir, "tests") + "\n")
+    f.write("build_cmd=" + path.join(file_dir, "build.py") + "\n")
+    f.write("test_cmd=" + path.join(file_dir, "test.py") + "\n")
+    f.write("localizer=profile\n")
+    print bugged_file
+    if bugged_file:
+        f.write("bugged_file=" + bugged_file + "\n")
+    f.write("fixed_out_file=" + fix_prefix + "\n")
+    f.write("single_case_timeout=60\n")
+    chdir(src_dir)
+
+def prereq():
+    chdir(src_dir)
+    ids = make_tests()
+    system("make")
+    make_revlog(ids)
+    make_conf()
+    chdir(this_dir)
+
+def clean_tests():
+    chdir(test_dir)
+    if glob("Makefile"):
+        system("make clean")
+    chdir(src_dir)
+    
+def postreq():
+    chdir(src_dir)
+    system("make clean")
+    clean_tests()
+    chdir(this_dir)
+    
+if __name__ == "__main__":
+    opts, args = getopt(argv[1:], "b:hf", ["bugged-file", "help", "full-search"])
+
+    if (len(args) < 1):
+        print_help()
+        exit(1)
+
+    bugged_file = None
+    full_search = False
+    for o, a in opts:
+        if o in ("-h", "--help"):
+            print_help()
+            exit(1)
+        elif o in ("-b", "--bugged_file"):
+            bugged_file = a
+        elif o in ("-f", "--full-search"):
+            full_search = True
+
+    fix_prefix="prophet_fix_"
+    file_dir = path.dirname(path.abspath(inspect.getfile(inspect.currentframe())))
+    this_dir = getcwd()
+    src_dir = path.abspath(args[0])
+    test_dir = path.join(src_dir, "tests")
+    work_dir = path.join(this_dir, "workdir")
+    revlog_file = path.join(work_dir, "repair.revlog")
+    conf_file = path.join(work_dir, "repair.conf")
+
+    system("rm -rf workdir/ 2>/dev/null")
+    system("mkdir workdir 2>/dev/null")
+    
+    if (len(args) > 1):
+        eargs = " " + " ".join(args[1:])
+    else:
+        eargs = ""
+
+    prereq()
+
+    chdir(file_dir)
+    CONF="CONF=" + conf_file
+    if full_search:
+        FULLSEARCHFLAGS="FULLSEARCHFLAGS=\"-full-explore -full-synthesis -cond-ext\""
+    else:
+        FULLSEARCHFLAGS="FULLSEARCHFLAGS=\"\""
+    WORKDIR="WORKDIR=" + path.join(work_dir, "repair")
+    SUMFILE="SUMFILE=" + path.join(work_dir, "summary")
+    LOGFILE="LOGFILE=" + path.join(work_dir, "log")
+    if (not(bugged_file is None)):
+        EXTRAFLAGS="EXTRAFLAGS=\"" + eargs + "\""
+    else:
+        EXTRAFLAGS="EXTRAFLAGS=\"-consider-all" + eargs + "\""
+    flags = " " + " ".join([CONF, FULLSEARCHFLAGS, WORKDIR, SUMFILE, LOGFILE, EXTRAFLAGS]) + " "
+    system("make" + flags + "init")
+    system("make" + flags + "fix")
+    system("mv " + fix_prefix + "* " + work_dir + "/")
+    chdir(this_dir)
+ 
+    postreq()
+    
+    exit(0)
